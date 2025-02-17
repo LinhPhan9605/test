@@ -114,14 +114,3 @@ Hoặc import file sql từ path: 'database/data/test.sql'
 - Lấy toàn bộ con cháu user theo id: http://localhost:8000/users/children?id=2
 - Lấy danh sách thu nhập của từng user: http://localhost:8000/users/revenues
 
-
-### Postgre
-
-```
-CREATE DATABASE "test" WITH OWNER = root ENCODING = 'UTF8' LC_COLLATE = 'en_US.UTF-8' LC_CTYPE = 'en_US.UTF-8' TEMPLATE template0;
-
-CREATE USER root WITH PASSWORD 'root';
-
-GRANT ALL PRIVILEGES ON DATABASE "test" TO root;
-```
--------
