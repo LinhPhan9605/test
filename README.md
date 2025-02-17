@@ -77,7 +77,7 @@ Tải file & cài đặt: https://getcomposer.org/Composer-Setup.exe
 ## Cài đặt Laravel & Database
 
 ```
-composer install && yarn && php artisan storage:link && cp .env.example .env && php artisan key:generate && code .env
+composer install && cp .env.example .env && php artisan key:generate && code .env
 ```
 Đổi tên Database tại `DB_DATABASE`
 
@@ -87,7 +87,7 @@ mysql -u root -p
 ```
 Nhập password MySQL, thường là **root**
 ```
-create database `shop-online`;
+create database `test`;
 ```
 #### Windows
 Mở `XAMPP` vào `phpMyAdmin` để cài đặt
@@ -95,36 +95,17 @@ Mở `XAMPP` vào `phpMyAdmin` để cài đặt
 
 ----
 ## Start dự án
-
-#### Chạy khi Pull Code mới về
-```
-yarn reset
-```
-
-#### Frontend Developer
 ```
 php artisan serve
-```
-```
-yarn dev
-```
-
-
-#### Backend Developer
-```
-php artisan serve
-```
-```
-yarn dev
-```
-```
-yarn backend
 ```
 
 #### URL
 
-- UI: http://localhost:8000/
-- Admin: http://localhost:8000/admin
+- Đang nhập: http://localhost:8000/login
+- Danh sách sản phẩm: http://localhost:8000/
+- Lấy toàn bộ con cháu user đang đang nhập: http://localhost:8000/users/children
+- Lấy toàn bộ con cháu user theo id: http://localhost:8000/users/children?id=2
+- Lấy danh sách thu nhập của từng user: http://localhost:8000/users/revenues
 
 
 ### Postgre
@@ -134,51 +115,6 @@ CREATE DATABASE "shop-online" WITH OWNER = root ENCODING = 'UTF8' LC_COLLATE = '
 
 CREATE USER root WITH PASSWORD 'root';
 
-GRANT ALL PRIVILEGES ON DATABASE "shop-online" TO root;
+GRANT ALL PRIVILEGES ON DATABASE "test" TO root;
 ```
 -------
-
-Redis and PHP Redis Extension for XAMPP on Windows
-==================================================
-
-Step 1: Download Redis
-----------------------
-
-1.  Download Redis for Windows from [GitHub](https://github.com/tporadowski/redis/releases).
-2.  Extract the files to a directory (e.g., `C:\Redis`).
-
-Step 2: Install Redis Server
-----------------------------
-
-1.  Open a command prompt as admin.
-2.  Navigate to Redis directory (e.g., `cd C:\Redis`).
-3.  Run `redis-server --service-install` to install Redis as a service.
-
-Step 3: Start Redis Server
---------------------------
-
-Run `redis-server --service-start` to start Redis service.
-
-Step 4: Download PHP Redis Extension
-------------------------------------
-
-Download `php_redis.dll` from [PECL](https://pecl.php.net/package/redis) or [GitHub](https://github.com/phpredis/phpredis/releases) matching your PHP version and thread safety (TS or NTS).
-
-Step 5: Configure PHP
----------------------
-
-1.  Find `php.ini` path by opening XAMPP Control Panel > Click Config > PHP.ini.
-2.  Copy `php_redis.dll` to XAMPP's PHP extensions directory (e.g., `C:\xampp\php\ext`).
-3.  Open `php.ini` and add `extension=php_redis.dll`.
-4.  Save and close `php.ini`.
-
-Step 6: Restart XAMPP
----------------------
-
-Restart Apache server in XAMPP Control Panel to load the new configuration.
-
-Step 7: Configure Laravel
--------------------------
-
-1.  Open `.env` file in your Laravel project.
-2.  Set `CACHE_DRIVER=redis`.
