@@ -99,6 +99,13 @@ Mở `XAMPP` vào `phpMyAdmin` để cài đặt
 php artisan serve
 ```
 
+----
+## Cài đặt database
+```
+php artisan migrate:fresh --seed
+```
+Hoặc import file sql từ path: 'database/data/test.sql'
+
 #### URL
 
 - Đang nhập: http://localhost:8000/login
