@@ -106,9 +106,11 @@ php artisan migrate:fresh --seed
 ```
 Hoặc import file sql từ path: 'database/data/test.sql'
 
-#### URL
 
+#### Tài khoản đăng nhập
 - tk, mk là email, vd: tk: 'User 1@example.com', mk: 'User 1@example.com'
+
+#### URL
 - Đăng nhập: http://localhost:8000/login
 - Danh sách sản phẩm: http://localhost:8000/
 - Lấy toàn bộ con cháu user đang đang nhập: http://localhost:8000/users/children
