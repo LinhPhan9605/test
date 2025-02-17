@@ -108,7 +108,8 @@ Hoặc import file sql từ path: 'database/data/test.sql'
 
 #### URL
 
-- Đang nhập: http://localhost:8000/login
+- tk, mk là email, vd: tk: 'User 1@example.com', mk: 'User 1@example.com'
+- Đăng nhập: http://localhost:8000/login
 - Danh sách sản phẩm: http://localhost:8000/
 - Lấy toàn bộ con cháu user đang đang nhập: http://localhost:8000/users/children
 - Lấy toàn bộ con cháu user theo id: http://localhost:8000/users/children?id=2
